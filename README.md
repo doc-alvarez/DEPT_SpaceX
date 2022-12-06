@@ -19,13 +19,11 @@ Instead of localstorage I used a sqlite database using prisma ORM.
 We need to setup prisma before launching the app.
 
 ```sh
-npm install --save-dev prisma
+npm install --save-dev prisma #If not installed already
 npm install @prisma/client #If not installed already
 ```
 
 ```sh
-npx prisma init --datasource-provider sqlite
-
 npx prisma db push
 ```
 
