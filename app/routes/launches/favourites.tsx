@@ -110,7 +110,14 @@ export function CatchBoundary() {
 //User will recover easy as the error will be nested.
 export function ErrorBoundary({ error }: { error: any }) {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <div className='errorImage'>
         <img src={errorImage} alt='Error Boundary' />
       </div>
