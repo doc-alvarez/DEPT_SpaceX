@@ -66,18 +66,12 @@ export const loader: LoaderFunction = async ({ request }) => {
         },
       },
     });
-    //Go fetch all records if the filter search query is empty.
-    if (query !== "") return json(searchedLaunches);
-  } catch (err) {
-    throw new Response("Error while searching database", { status: 500 });
-  }
-
-  //Get data from database
-  const storedLaunches = await db.launches.findMany();
-
-  //If there is no data on DB use API.
-  //TODO add expiration and timer to update the DB every X time.
-  try {
+    console.log(searchedLaunches, query);
+    if (query && query !== "") return json(searchedLaunches);
+    //Get data from database
+    const storedLaunches = await db.launches.findMany();
+    console.log(storedLaunches);
+    //If there is no data on DB use API.
     if (storedLaunches.length === 0) {
       console.log("API Used");
       const launchesRaw = await fetch("https://api.spacexdata.com/v3/launches");
@@ -92,8 +86,9 @@ export const loader: LoaderFunction = async ({ request }) => {
       console.log("Cache Used");
       return json(storedLaunches);
     }
+    //TODO add expiration and timer to update the DB every X time.
   } catch (err) {
-    throw new Response("Error fetching data");
+    throw new Response("Error while searching database", { status: 500 });
   }
 };
 
