@@ -3,12 +3,8 @@ import indexStyles from "~/styles/index.css";
 import logoUrl from "~/assets/spaceX_logo.png";
 import {
   Form,
-  Links,
-  Meta,
   NavLink,
   Outlet,
-  Scripts,
-  useCatch,
   useLocation,
   useSubmit,
   useTransition,
@@ -45,7 +41,11 @@ export default function Launches() {
         </div>
         <h2 className='top_title'>Launches</h2>
         <nav>
-          <div>
+          <div
+            className={
+              location.pathname === "/launches/all" ? "active_border" : ""
+            }
+          >
             <NavLink
               prefetch='intent'
               style={({ isActive }) => (isActive ? {} : { color: "#FFFFFF78" })}
@@ -54,7 +54,13 @@ export default function Launches() {
               All
             </NavLink>
           </div>
-          <div>
+          <div
+            className={
+              location.pathname === "/launches/favourites"
+                ? "active_border"
+                : ""
+            }
+          >
             <NavLink
               prefetch='intent'
               style={({ isActive }) => (isActive ? {} : { color: "#FFFFFF78" })}
@@ -64,7 +70,7 @@ export default function Launches() {
             </NavLink>
           </div>
         </nav>
-        <div>
+        <div id='search-form-container'>
           <Form replace id='search-form' role='search' action='/launches/all'>
             <input
               autoComplete='off'

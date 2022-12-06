@@ -16,6 +16,9 @@ body {
   box-sizing: border-box;
   font-family: var(--font-display);
 }
+#footer {
+  margin-top: 50px;
+}
 .logo_image {
   width: 100%;
   display: flex;
@@ -58,6 +61,10 @@ nav a {
 nav div {
   width: 100%;
   text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 form {
   width: 100%;
@@ -90,6 +97,7 @@ form input:focus {
 main {
   color: rgba(255, 255, 255, 0.47);
   padding: 0 25px;
+  margin-bottom: 100px;
 }
 main h3 {
   font-size: 14px;
@@ -151,7 +159,7 @@ main h3 {
   margin: 0;
   align-items: center;
   color: rgba(255, 255, 255, 0.87);
-  max-width: 75%;
+  max-width: 90%;
 }
 .date_star_container form {
   margin-top: 0;
@@ -216,4 +224,79 @@ button[name="favourite"] {
 .errorText {
   width: 100%;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .top_title {
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.87);
+  }
+  .logo_image img {
+    width: 245px;
+  }
+  nav a {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  nav div {
+    width: 180px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  nav {
+    justify-content: flex-start;
+    padding-left: 61px;
+  }
+  #search-form-container {
+    width: 414px;
+    padding-left: 36px;
+  }
+  main {
+    padding: 0 58px;
+  }
+  #detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 33px 37px;
+    grid-template-areas:
+      ". . ."
+      ". . ."
+      ". . .";
+  }
+  #launch_item {
+    height: 100%;
+  }
+  .content_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  .content_details {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 90%;
+  }
+  .img_container {
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+  .date_star_container {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 20px;
+  }
+  .content_container {
+    width: 90%;
+  }
+}
+.active_border {
+  border-bottom: 1px solid white;
 }

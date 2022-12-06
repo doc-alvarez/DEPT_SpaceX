@@ -80,6 +80,7 @@ export default function Favourites() {
           );
         })}
       </section>
+      <div id='footer'>SPACEX@2021</div>
     </main>
   );
 }

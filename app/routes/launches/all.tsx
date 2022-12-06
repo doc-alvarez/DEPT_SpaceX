@@ -108,6 +108,7 @@ export default function All() {
           );
         })}
       </section>
+      <div id='footer'>SPACEX@2021</div>
     </main>
   );
 }

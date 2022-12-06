@@ -23,10 +23,10 @@ export default function Launch_item({ launch }: { launch: LaunchData }) {
           {launch.mission_name ? <>{launch.mission_name}</> : <i>No Name</i>}{" "}
         </div>
 
-        {launch.details && (
-          <p className='content_details'>
-            First orbital class rocket capable of reflight
-          </p>
+        {launch.details ? (
+          <p className='content_details'>{launch.details.slice(0, 50)}...</p>
+        ) : (
+          <p className='content_details'></p>
         )}
 
         <div className='date_star_container'>
