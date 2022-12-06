@@ -89,7 +89,14 @@ export default function Favourites() {
 export function CatchBoundary() {
   const caught = useCatch();
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <div className='errorImage'>
         <img src={errorImage} alt='Catched Error' />
       </div>

@@ -121,7 +121,7 @@ main h3 {
   border-radius: 8px;
 }
 #launch_item:hover {
-  box-shadow: 0 0 15px 0;
+  box-shadow: 0 0 15px 0 white;
   cursor: pointer;
 }
 .img_container {

@@ -50,7 +50,14 @@ export function ErrorBoundary({ error }: { error: any }) {
       </head>
       <body>
         {/* add the UI you want your users to see */}
-        <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <div className='errorImage'>
             <img src={errorImage} alt='Oops there was an error' />
           </div>
