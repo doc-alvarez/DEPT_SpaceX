@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Launches {
+  id     String @id @default(uuid())
+  flight_number Int 
+  mission_patch String
+  details String
+  rocket_name String
+  rocket_id String
+  active Boolean
+  cost_per_launch Int
+  company String
+  mission_name String @unique
+  launch_date_unix Int
+  isFavourite Boolean
+}
+
+model Favourites {
+  id     String @id @default(uuid())
+  flight_number Int
+  mission_patch String
+  details String
+  rocket_name String
+  rocket_id String
+  active Boolean
+  cost_per_launch Int
+  company String
+  mission_name String @unique
+  launch_date_unix Int
+  isFavourite Boolean
+}
