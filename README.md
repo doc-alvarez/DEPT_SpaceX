@@ -35,4 +35,13 @@ npm run dev
 
 Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
 
+
+Error Handling: 
+
+```sh
+throw new Error(...) on any Loader, Action or component to watch errorboundaries.
+
+throw new Response('Message', {status: 500, statusText: 'bla bla bla'}) to catch some catchboundaries on loaders and actions.
+```
+
 ### I hope you enjoy it. 🚀
