@@ -1,10 +1,10 @@
 # Welcome to Remix Space X!
 
 - [Remix Docs](https://remix.run/docs)
-
+- Stack used: Remix - Typescript - React - Prisma - Sqlite - SpaceX public API - Node.js
 ## Development
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
+To run the app locally, make sure your project's local dependencies are installed:
 
 ```sh
 git clone https://github.com/doc-alvarez/DEPT_SpaceX.git
